@@ -1,6 +1,23 @@
-python -m venv myenv
-source myenv/bin/activate  # On Windows use `myenv\Scripts\activate`
-pip install xgboost streamlit
+import subprocess
+import sys
+import os
+
+def install_requirements():
+    # Check if requirements.txt exists
+    if os.path.exists('requirements.txt'):
+        try:
+            # Install packages from requirements.txt
+            subprocess.check_call([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"])
+        except subprocess.CalledProcessError as e:
+            print(f"Error installing packages: {e}")
+            sys.exit(1)
+    else:
+        print("requirements.txt not found. Please create it with the required dependencies.")
+        sys.exit(1)
+
+# Call the function to install requirements
+install_requirements()
+
 
 import streamlit as st
 import numpy as np

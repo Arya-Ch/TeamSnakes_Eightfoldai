@@ -1,5 +1,6 @@
-pip install --upgrade pip
-sudo /home/adminuser/venv/bin/python -m pip install xgboost
+python -m venv myenv
+source myenv/bin/activate  # On Windows use `myenv\Scripts\activate`
+pip install xgboost streamlit
 
 import streamlit as st
 import numpy as np

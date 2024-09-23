@@ -1,10 +1,5 @@
 pip install --upgrade pip
-
-import subprocess
-import sys
-
-# Install packages if they are not already installed
-subprocess.check_call([sys.executable, "-m", "pip", "install", "xgboost", "streamlit"])
+sudo /home/adminuser/venv/bin/python -m pip install xgboost
 
 import streamlit as st
 import numpy as np

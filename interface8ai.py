@@ -1,4 +1,9 @@
-!pip install xgboost streamlit
+import subprocess
+import sys
+
+# Install packages if they are not already installed
+subprocess.check_call([sys.executable, "-m", "pip", "install", "xgboost", "streamlit"])
+
 import streamlit as st
 import numpy as np
 import pandas as pd
